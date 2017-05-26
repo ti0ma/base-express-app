@@ -3,7 +3,6 @@
 # ...but
 !api
 !config
-!routes
 !utils
 !app.js
 !package.json

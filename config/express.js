@@ -7,7 +7,6 @@ const config = require('config/environment');
 const index = require('api/routes/index');
 const accessControl = require('config/middlewares/accessControl');
 const logger = require('utils/logger');
-const opbeat = require('utils/opbeat');
 
 const app = express();
 
@@ -20,6 +19,7 @@ app.use(accessControl);
 app.use('/', index);
 
 if (config.opbeat.enable) {
+  const opbeat = require('utils/opbeat');
   logger.info('Opbeat enabled');
   app.use(opbeat.middleware.express());
 }

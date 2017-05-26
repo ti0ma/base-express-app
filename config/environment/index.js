@@ -13,7 +13,8 @@ const all = {
   port: process.env.BACK_PORT || 9000,
 
   opbeat: {
-    enable: false,
+    enable: false
+    // Uncomment if enabled
     // organizationId: '',
     // secretToken: '',
     // appId: ''
