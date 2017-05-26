@@ -1,0 +1,82 @@
+{
+  "name": "base-express-app",
+  "version": "0.0.0",
+  "description": "Basic Express + Winston + AVA + XO + Docker Boilerplate",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "xo && ava --verbose",
+    "test:ci": "nyc --reporter=cobertura ava --tap | tap-xunit > back-intranet-report.xml",
+    "lint:ci": "xo --reporter=checkstyle > checkstyle.xml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ti0ma/base-express-app.git"
+  },
+  "keywords": [
+    "Express",
+    "Boilerplate"
+  ],
+  "author": "@ti0ma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ti0ma/base-express-app/issues"
+  },
+  "homepage": "https://github.com/ti0ma/base-express-app#readme",
+  "dependencies": {
+    "app-module-path": "^2.2.0",
+    "body-parser": "^1.17.2",
+    "celebrate": "^4.0.1",
+    "cookie-parser": "^1.4.3",
+    "errorhandler": "^1.5.0",
+    "express": "^4.15.3",
+    "joi": "^10.5.0",
+    "lodash": "^4.17.4",
+    "opbeat": "^4.14.0",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "nyc": "10.3.2",
+    "supertest": "^3.0.0",
+    "tap-xunit": "1.7.0",
+    "xo": "^0.18.2"
+  },
+  "ava": {
+    "files": [
+      "**/*.spec.js"
+    ],
+    "concurrency": 5,
+    "failFast": true,
+    "failWithoutAssertions": false,
+    "powerAssert": false
+  },
+  "xo": {
+    "space": true,
+    "rules": {
+      "no-unused-vars": [
+        "error",
+        {
+          "ignoreRestSiblings": true,
+          "args": "none"
+        }
+      ],
+      "no-warning-comments": [
+        0
+      ],
+      "arrow-parens": [
+        "error",
+        "always"
+      ]
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "paths": [
+            "./"
+          ]
+        }
+      }
+    }
+  }
+}
