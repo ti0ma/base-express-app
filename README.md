@@ -14,7 +14,7 @@ This project is for help initializing a new API project. To start you can do the
 - `npm start` - Run the server
 - `npm test` - Run the linter and tests
 - `npm run test:ci` - Run tests with jenkins report
-- `npm run lint:ci` - Tun lint with jenkins report
+- `npm run lint:ci` - Run lint with jenkins report
 
 # TODO
 - [ ] Create Yeoman Generator
