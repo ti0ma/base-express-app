@@ -1,5 +1,6 @@
 // Root path
 require('app-module-path').addPath(__dirname);
+require('utils/overrides');
 
 const http = require('http');
 const config = require('config/environment');
